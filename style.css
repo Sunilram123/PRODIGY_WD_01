@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background: linear-gradient(90deg, #b12e3dd3 50%, #eb3cb0d7 50%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    background-color: bisque;
+    width: 90%;
+    height: 90vh;
+}
+.navbar .logo{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 3px solid rgb(203, 15, 220);
+    border-radius: 50%;
+    border-right-color: transparent;
+    position: relative;
+    
+}
+.navbar .logo::before{
+    content: "Cooldrinks";
+    color: red;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%,-50%);
+    font-family: 'Arizonia',cursive;
+}
+.navbar{
+    
+    width: 90%;
+    margin: auto;
+    height: 15vh;
+}
+.navbar , .navlist{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navlist li{
+    list-style: none;
+    padding: 20px;
+}
+.navlist a{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+}
+.navbar li a:hover{
+    color: rgb(201, 15, 111)
+}
+.navbar a::before{
+    content: " ";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: .5s ease-in-out;
+}
+.navlist a:hover::before{
+    width: 100%;
+}
+.hero{
+    background-color: rosybrown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.hero img{
+    width: 70vw;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    border-left: 5px solid green;
+    padding: 20px 40px;
+}
+.content h3{
+    color: rgb(73, 73, 73);
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.content h1{
+    color: green;
+    font-size: 50px;
+}
+.content p{
+    color: black;
+    font-size: 18px;
+    line-height: 30px;
+}
+.content button{
+    padding: 15px 30px;
+    font-size: 18px;
+    color: whitesmoke;
+    border: none;
+    background-color: green;
+    cursor: pointer;
+}
+.content button:hover{
+    background-color: greenyellow;
+    color: green;
+}
+.hamburger{
+    display: none;
+}
+.hamburger span{
+    width: 15px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    margin: 5px;
+}
+.hamburger span:nth-child(2){
+    width: 30px;
+}
+@media screen and (max-width: 1207px){
+    .content h1{
+        font-size: 45px;
+    }
+    .content p{
+        font-size: 17px;
+        line-height: 25px;
+    }
+}
+@media screen and (max-width: 1110px){
+    .content{
+        padding: 0px 40px;
+        gap: 10px;
+    }
+    content h1{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 796px){
+    .wrapper{
+        position: relative;
+        overflow: hidden;
+    }
+    .navlist{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        right: -70%;
+        background-color: green;
+        width: 300px;
+        height: 100%;
+        justify-content: center;
+        transition: .5s ease-in-out;
+    }
+    .navlist-active{
+        right: 0;
+
+    }
+    .hamburger{
+        display: block;
+        z-index: 5;
+    }
+    .hero img{
+        display: none;
+    }
+    .content h1{
+        font-size: 50px;
+    }
+    .content p{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .content{
+        padding: 20px 50px;
+        gap: 15px;
+    }
+}
